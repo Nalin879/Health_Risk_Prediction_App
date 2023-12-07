@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancer Risk Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input[type=number] {
+            margin: 5px 0;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cancer Risk Prediction Form</h2>
+        
+        <form action="/predict" method="post">
+            <label for="smoking">Smoking:</label>
+            <input type="number" id="smoking" name="Smoking" min="0" max="2" required><br><br>
+
+            <label for="alcohol">Alcohol Consumption:</label>
+            <input type="number" id="alcohol" name="Alcohol" min="0" max="3" required><br><br>
+
+            <label for="redmeat">Red Meat Consumption:</label>
+            <input type="number" id="redmeat" name="RedMeat" min="0" max="2" required><br><br>
+
+            <label for="pollution">Exposure to Pollution:</label>
+            <input type="number" id="pollution" name="Pollution_Yes" min="0" max="1" required><br><br>
+
+            <label for="autoimmune">Autoimmune Disorder:</label>
+            <input type="number" id="autoimmune" name="AutoimmuneDisorder_Yes" min="0" max="1" required><br><br>
+
+            <label for="diabetes">Diabetes History:</label>
+            <input type="number" id="diabetes" name="DiabetesHistory_Yes" min="0" max="1" required><br><br>
+
+            <label for="exercise">Exercise:</label>
+            <input type="number" id="exercise" name="Exercise" min="0" max="3" required><br><br>
+
+            <label for="fruitsveggies">Fruits and Veggies Consumption:</label>
+            <input type="number" id="fruitsveggies" name="FruitsVeggies" min="0" max="2" required><br><br>
+
+            <label for="sleephours">Sleep Hours:</label>
+            <input type="number" id="sleephours" name="SleepHours" min="4" max="12" required><br><br>
+
+            <label for="mentalhealth">Mental Health:</label>
+            <input type="number" id="mentalhealth" name="MentalHealth" min="0" max="3" required><br><br>
+
+            <input type="submit" value="Submit" class="submit-btn">
+        </form>
+    </div>
+</body>
+</html>

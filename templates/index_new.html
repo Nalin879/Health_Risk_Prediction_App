@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancer Risk Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            /* text-align: center; */
+            display: flex;
+            justify-content: space-evenly;align-items: start;
+            flex-wrap: wrap;
+            /* padding-top: 5%; */
+        }
+        .con1,.con2{
+            width:20%;
+        }
+        .con1 div:hover,.con2 div:hover{
+            background-color: #009688;
+            border-radius: 20px;
+            padding: 2%;
+        }
+        .con1 p,.con2 p{
+            font-size: 15px;
+        }
+        h4{
+            font-weight: bold;
+            font-size: 15px;
+        }
+        h2 {
+            text-align: center;
+            color: #009688;
+        }
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        form div{
+            display: flex;
+            justify-content: flex-end;
+            gap:20px;
+            padding-bottom: 10px;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: rgb(3, 3, 70);
+        }
+        input[type=number] {
+            margin: 5px 0;
+        }
+        input{
+            width:30vh;
+            text-align: center;
+        }
+        .submit-btn {
+            background-color: #009688;
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            margin-top: 30px;
+            margin-left: 19vh;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .submit-btn:hover {
+            background-color: #f4f4f4;
+            border: solid #009688 2px;
+            color:#009688;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="con1">
+        <div>
+            <h4>Smoking (Range: 0 - 2)</h4>
+            <p> - Description: Indicates the smoking habit of an individual.<br>
+                - 0: Non-smoker.<br>
+                - 1: Occasional smoker.<br>
+                - 2: Regular smoker.<br>
+                - Smoking is a well-known risk factor for various cancers, including lung cancer.</p>
+        </div>
+
+        <div>
+            <h4>Alcohol Consumption (Range: 0 - 3)</h4>
+            <p>
+                - Description: Reflects the level of alcohol consumption.<br>
+                - 0: Non-drinker.<br>
+                - 1-3: Increasing levels of alcohol consumption.<br>
+                - High alcohol intake is linked to an increased risk of certain cancers, such as liver cancer.
+
+            </p>
+        </div>
+
+        <div>
+            <h4>Red Meat Consumption (Range: 0 - 2)</h4>
+            <p>
+                - Description: Assesses the frequency of red meat consumption.<br>
+                - 0: Rarely or never eats red meat.<br>
+                - 1: Eats red meat occasionally.<br>
+                - 2: Frequently consumes red meat.<br>
+                - Higher consumption of red meat has been associated with an increased risk of certain cancers.
+            </p>
+        </div>
+
+        <div>
+            <h4>Exposure to Pollution (Range: 0 - 1)            </h4>
+            <p>
+                - Description: Indicates the level of exposure to pollution.<br>
+                - 0: Low or no exposure.<br>
+                - 1: High exposure.<br>
+                - Pollution, especially air pollution, has been linked to increased cancer risk.
+            </p>
+        </div>
+
+        <div>
+            <h4>Autoimmune Disorder (Range: 0 - 1)</h4>
+            <p>
+                - Description: Indicates whether the individual has an autoimmune disorder.<br>
+                - 0: No autoimmune disorder.<br>
+                - 1: Presence of an autoimmune disorder.<br>
+                - Certain autoimmune disorders may increase the risk of cancer.
+
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Cancer Risk Prediction Form</h2>
+        <h5>(Enter the numbers in the form according to the give discriptions)</h5>
+        <form action="/predict" method="post">
+            <!-- Input fields here -->
+            <!-- ... -->
+            <div>
+                <label for="smoking">Smoking:</label>
+                <input type="number" id="smoking" name="smoking" min="0" max="2" required><br><br>
+            </div>
+        
+
+            <div>
+                <label for="alcohol">Alcohol Consumption:</label>
+                <input type="number" id="alcohol" name="alcohol" min="0" max="3" required><br><br>
+
+            </div>
+        
+            <div>
+                <label for="redmeat">Red Meat Consumption:</label>
+                <input type="number" id="redmeat" name="redmeat" min="0" max="2" required><br><br>
+
+            </div>
+        
+            <div>
+                <label for="pollution">Exposure to Pollution:</label>
+                <input type="number" id="pollution" name="pollution" min="0" max="1" required><br><br>
+            </div>
+
+            <div>
+                <label for="autoimmune">Autoimmune Disorder:</label>
+                <input type="number" id="autoimmune" name="autoimmune" min="0" max="1" required><br><br>
+            </div>
+        
+            <div>
+                <label for="diabetes">Diabetes History:</label>
+                <input type="number" id="diabetes" name="diabetes" min="0" max="1" required><br><br>
+            </div>
+
+        
+            <div>
+                <label for="exercise">Exercise:</label>
+                <input type="number" id="exercise" name="exercise" min="0" max="3" required><br><br>
+            </div>
+        
+            <div>
+                <label for="fruitsveggies">Fruits and Veggies Consumption:</label>
+                <input type="number" id="fruitsveggies" name="fruitsveggies" min="0" max="2" required><br><br>
+            </div>
+        
+            <div>
+                <label for="sleephours">Sleep Hours:</label>
+                <input type="number" id="sleephours" name="sleephours" min="4" max="12" required><br><br>
+            </div>
+
+            <div>
+                <label for="mentalhealth">Mental Health:</label>
+                <input type="number" id="mentalhealth" name="mentalhealth" min="0" max="3" required><br><br>
+            </div>
+
+        
+
+            <input type="submit" value="Submit" class="submit-btn">
+        </form>
+    </div>
+
+    <div class="con2">
+        <div>
+            <h4>Diabetes History (Range: 0 - 1)            </h4>
+            <p>
+                - Description: Reflects whether the individual has a history of diabetes.<br>
+                - 0: No history of diabetes.<br>
+                - 1: Has diabetes.<br>
+                - Diabetes has been linked to a higher risk of some types of cancer.
+            </p>
+        </div>
+
+        <div>
+            <h4>Exercise (Range: 0 - 3)            </h4>
+            <p>
+                - Description: Measures the frequency of exercise.<br>
+                - 0: No exercise.<br>
+                - 1-3: Increasing levels of physical activity.<br>
+                - Regular physical activity is known to reduce the risk of several cancers.
+            </p>
+        </div>
+
+        <div>
+            <h4>Fruits and Veggies Consumption (Range: 0 - 2)            </h4>
+            <p>
+                - Description: Indicates the consumption level of fruits and vegetables.<br>
+                - 0: Low consumption.<br>
+                - 1: Moderate consumption.<br>
+                - 2: High consumption.<br>
+                - A diet rich in fruits and vegetables is associated with a lower risk of cancer.
+             
+            </p>
+        </div>
+
+        <div>
+            <h4>Sleep Hours (Range: 4 - 12)            </h4>
+            <p>
+                - Description: The average number of sleep hours per night.<br>
+                - Adequate sleep is important for overall health and may influence cancer risk.
+            </p>
+        </div>
+
+        <div>
+            <h4>Mental Health (Range: 0 - 3)            </h4>
+            <p>
+                - Description: Reflects the state of the individual's mental health.<br>
+                - 0: Good mental health.<br>
+                - 1-3: Increasing levels of mental health concerns.<br>
+                - While the direct link between mental health and cancer risk is complex, overall well-being, including mental health, plays a role in physical health.
+            
+            </p>
+        </div>
+    </div>
+</body>
+</html>

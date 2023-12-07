@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancer Risk Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .result-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .result-container p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cancer Risk Prediction Result</h2>
+        <div class="result-container">
+            <p>Your predicted risk level is: <strong>{{ risk_level }}</strong></p>
+            <br>
+            
+            <p>Your predicted risk score is: <strong>{{ risk_score }}</strong></p>
+            <div>{{ recommendation|safe }}</div>
+        </div>
+    </div>
+</body>
+</html>
