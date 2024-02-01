@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import pickle
 import numpy as np
+import os
 
 # Define the updated feature set used for the model
 updated_feature_set = [
@@ -87,4 +88,5 @@ def calculate_risk_score(features):
     return risk_score
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
